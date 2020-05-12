@@ -9,22 +9,22 @@ old_set_author = Embed.set_author
 
 def new_add_field(*args, **kwargs):
     if len(kwargs['name']) > field_name_limit:
-        kwargs['name'] = (kwargs['name'][:field_name_limit-3] + '...')
+        kwargs['name'] = (kwargs['name'][:field_name_limit-1] + '…')
     if len(kwargs['value']) > field_value_limit:
-        kwargs['value'] = (kwargs['value'][:field_value_limit-3] + '...')
+        kwargs['value'] = (kwargs['value'][:field_value_limit-1] + '…')
 
     old_add_field(*args, **kwargs)
 
 
 def new_set_footer(*args, **kwargs):
     if len(kwargs['text']) > footer_text_limit:
-        kwargs['text'] = (kwargs['text'][:footer_text_limit - 3] + '...')
+        kwargs['text'] = (kwargs['text'][:footer_text_limit - 1] + '…')
 
     old_set_footer(*args, **kwargs)
 
 
 def new_set_author(*args, **kwargs):
     if len(kwargs['name']) > author_name_limit:
-        kwargs['name'] = (kwargs['name'][:author_name_limit - 3] + '...')
+        kwargs['name'] = (kwargs['name'][:author_name_limit - 1] + '…')
 
     old_set_author(*args, **kwargs)
